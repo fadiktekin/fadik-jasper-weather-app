@@ -1,7 +1,7 @@
 import "./Form.css";
 import { uid } from "uid";
 
-export function Form({ handleAddActivity }) {
+export function Form({ onAddActivity }) {
   function onSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -13,7 +13,9 @@ export function Form({ handleAddActivity }) {
       isForGoodWeather: data.isForGoodWeather === "on",
     };
 
-    console.log(result);
+    onAddActivity(result);
+    event.currentTarget.reset();
+    event.currentTarget.elements.name.focus();
   }
 
   return (
