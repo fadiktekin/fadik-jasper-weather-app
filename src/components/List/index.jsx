@@ -1,18 +1,13 @@
 import "./List.css";
 
-export function List() {
-  const items = [
-    { id: 1, name: "Item 1", isGoodWeather: true },
-    { id: 2, name: "Item 2", isGoodWeather: false },
-    { id: 3, name: "Item 3", isGoodWeather: true },
-  ];
-
+export function List({ activities }) {
+  console.log(activities);
   return (
     <div className="list-container">
       <h2>List of Activities</h2>
       <ul className="list">
-        {items
-          .filter((item) => item.isGoodWeather)
+        {activities
+          .filter((item) => item.isForGoodWeather)
           .map((item) => (
             <li key={item.id} className="listItem">
               {item.name}
