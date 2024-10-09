@@ -1,4 +1,6 @@
 import "./Form.css";
+import { uid } from "uid";
+
 export function Form({ handleAddActivity }) {
   function onSubmit(event) {
     event.preventDefault();
@@ -6,6 +8,7 @@ export function Form({ handleAddActivity }) {
     const data = Object.fromEntries(formData);
 
     const result = {
+      id: uid(),
       name: data.name,
       isForGoodWeather: data.isForGoodWeather === "on",
     };
