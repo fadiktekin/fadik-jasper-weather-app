@@ -1,0 +1,20 @@
+.list-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+
+.list {
+  padding: 0px;
+}
+
+.listItem {
+  background: #f0f0f0;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+  border: 1px dotted #000;
+}
