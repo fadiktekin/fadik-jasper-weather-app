@@ -3,6 +3,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 10px;
+  border-radius: 10px;
 }
 
 .list {
@@ -14,6 +15,13 @@
   color: #000;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
   border: 1px dotted #000;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+
+.list button {
+  margin: 10px;
 }
