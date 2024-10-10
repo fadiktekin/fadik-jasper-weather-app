@@ -3,9 +3,6 @@ import "./List.css";
 export function List({ activities, onDeleteActivity, isGoodWeather }) {
   return (
     <div className="list-container">
-      <h2>
-        {isGoodWeather ? "Good Weather Activities" : "Bad Weather Activities"}
-      </h2>
       <ul className="list">
         {activities
           .filter((item) => item.isForGoodWeather === isGoodWeather)
