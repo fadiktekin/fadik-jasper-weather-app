@@ -54,7 +54,7 @@ function App() {
       <List
         activities={activities}
         onDeleteActivity={handleDeleteActivity}
-        weather={weather}
+        isGoodWeather={weather.isGoodWeather}
       ></List>
       <Form onAddActivity={handleAddActivity}></Form>
     </>

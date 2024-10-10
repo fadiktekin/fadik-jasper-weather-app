@@ -1,17 +1,14 @@
 import "./List.css";
-import { useEffect } from "react";
 
-export function List({ activities, onDeleteActivity, weather }) {
+export function List({ activities, onDeleteActivity, isGoodWeather }) {
   return (
     <div className="list-container">
       <h2>
-        {weather.isGoodWeather
-          ? "Good Weather Activities"
-          : "Bad Weather Activities"}
+        {isGoodWeather ? "Good Weather Activities" : "Bad Weather Activities"}
       </h2>
       <ul className="list">
         {activities
-          .filter((item) => item.isForGoodWeather === weather.isGoodWeather)
+          .filter((item) => item.isForGoodWeather === isGoodWeather)
           .map((item) => (
             <li key={item.id} className="list__item">
               {item.name}
