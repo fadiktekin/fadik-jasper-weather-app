@@ -1,34 +1,37 @@
 import { useEffect, useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
 import "./App.css";
 
 function App() {
-  const [activities, setActivities] = useState([]);
+  const [activities, setActivities] = useLocalStorageState("activities", {
+    defaultValue: [],
+  });
   const [weather, setWeather] = useState({});
 
   useEffect(() => {
     async function fetchWeather() {
       try {
-        const respose = await fetch(
+        const response = await fetch(
           "https://example-apis.vercel.app/api/weather"
         );
 
-        if (!respose.ok) {
-          console.log("API ERROR:", respose.status);
+        if (!response.ok) {
+          console.error("API ERROR:", response.status);
           return;
         }
 
-        const data = await respose.json();
+        const data = await response.json();
         setWeather(data);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching weather:", error);
       }
     }
 
     fetchWeather();
 
-    const intervalId = setInterval(fetchWeather, 1000);
+    const intervalId = setInterval(fetchWeather, 5000);
     return () => clearInterval(intervalId);
   }, []);
 
@@ -43,20 +46,19 @@ function App() {
   return (
     <>
       <h1>
-        {weather.condition}
-        {weather.temperature}
+        {weather.condition} {weather.temperature}°C
       </h1>
       <p>
         {weather.isGoodWeather
-          ? `The weather is awesome! Go outside and:`
-          : `Bad weather outside! Here's what you can do now:`}
+          ? "The weather is awesome! Go outside and:"
+          : "Bad weather outside! Here's what you can do now:"}
       </p>
       <List
         activities={activities}
         onDeleteActivity={handleDeleteActivity}
         isGoodWeather={weather.isGoodWeather}
-      ></List>
-      <Form onAddActivity={handleAddActivity}></Form>
+      />
+      <Form onAddActivity={handleAddActivity} />
     </>
   );
 }
