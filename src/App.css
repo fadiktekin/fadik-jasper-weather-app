@@ -1,9 +1,13 @@
 #root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   max-width: 300px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   background-color: #3e3e3e;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .logo {
@@ -40,4 +44,9 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.weather-conditions {
+  font-size: 50px;
+  line-height: 0.1;
 }
