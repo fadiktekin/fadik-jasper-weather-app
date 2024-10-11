@@ -12,14 +12,14 @@ export function LocationForm({ onLocationChange, location }) {
         {["Europe", "Arctic", "Sahara", "Rainforest"].map((value) => (
           <div key={value}>
             <input
-              id="location"
+              id={value}
               type="radio"
               name="location"
               value={value.toLowerCase()}
               checked={location === value.toLowerCase()}
               onChange={handleChange}
             />
-            <label htmlFor="location">{value}</label>
+            <label htmlFor={value}>{value}</label>
           </div>
         ))}
       </div>

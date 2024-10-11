@@ -23,7 +23,7 @@ export function Form({ onAddActivity }) {
       <h2 id="title">Add new Activity</h2>
       <div>
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" required autoComplete="off" />
       </div>
       <div>
         <label htmlFor="good-weather">Good-weather activity</label>
