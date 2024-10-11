@@ -1,0 +1,10 @@
+.location-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+}
