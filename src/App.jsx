@@ -60,15 +60,17 @@ function App() {
         location={location}
         onLocationChange={handleLocationChange}
       />
-      <h2>Current Weather</h2>
-      <p className="weather-conditions">
-        {weather.condition} {weather.temperature}°C
-      </p>
-      <p>
-        {weather.isGoodWeather
-          ? "The weather is awesome! Go outside and:"
-          : "Bad weather outside! Here's what you can do now:"}
-      </p>
+      <div>
+        <h2>Current Weather</h2>
+        <p className="weather-conditions">
+          {weather.condition} {weather.temperature}°C
+        </p>
+        <p>
+          {weather.isGoodWeather
+            ? "The weather is awesome! Go outside and:"
+            : "Bad weather outside! Here's what you can do now:"}
+        </p>
+      </div>
       <List
         activities={activities}
         onDeleteActivity={handleDeleteActivity}
