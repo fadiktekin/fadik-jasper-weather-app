@@ -55,13 +55,15 @@ function App() {
 
   return (
     <>
+      <h1 id="title">Weather Activities</h1>
       <LocationForm
         location={location}
         onLocationChange={handleLocationChange}
       />
-      <h1>
+      <h2>Current Weather</h2>
+      <p className="weather-conditions">
         {weather.condition} {weather.temperature}°C
-      </h1>
+      </p>
       <p>
         {weather.isGoodWeather
           ? "The weather is awesome! Go outside and:"

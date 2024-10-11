@@ -29,10 +29,11 @@
 }
 
 .activity-form input[type="text"] {
-  width: 100%;
   padding: 8px;
+  color: #2f2f2f;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background: #fff;
 }
 
 .activity-form input[type="checkbox"] {
@@ -40,8 +41,13 @@
   color: aqua;
 }
 
+input[type="checkbox" i] {
+  background-color: #fff;
+}
+
 .activity-form button {
   padding: 10px 20px;
+  background: #fff;
   background-color: #4caf50;
   color: white;
   border: none;
